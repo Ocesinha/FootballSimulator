@@ -34,6 +34,7 @@ let chance = 0;
 let createTeam1 = false;
 let createTeam2 = false;
 let terminaartidaexecute = false;
+let terminado = true;
 
 //variaveis do temporizador
 let clicado = false;
@@ -290,37 +291,57 @@ function geraTime2(callback){
 
 //funções que definem as chances dos times
 function team2chances() {
-    if (chance <= 10) {
+    if (chance <= 9) {
         let p = document.createElement('p');
-        p.textContent = `E o ${teamGlobal2.Nome} chuta pra foraaa`;
+        p.textContent = `${teamGlobal2.Nome} - chute pra foraaa`;
         lancesli.appendChild(p);
-    } else if (chance === 111) {
+    } else if (chance === 10) {
         let p = document.createElement('p');
         p.textContent = `${teamGlobal2.Nome} - bate o penâlti e... PERDEUUU`;
         lancesli.appendChild(p);
-    } else if (chance === 12) {
+    } else if (chance === 11) {
         let p = document.createElement('p');
         p.textContent = `${teamGlobal2.Nome} - bate o penâlti e... é GOOOOLLLL`;
         lancesli.appendChild(p);
         gol2 += 1;
         resultado.innerHTML = `${gol1} x ${gol2}`;
-    } else if (chance === 13) {
+    } else if (chance === 12) {
         let p = document.createElement('p');
         p.textContent = `${teamGlobal2.Nome} - a bola bateee na traveeee`;
         lancesli.appendChild(p);
-    } else if (chance >= 14) {
+    } else if (chance === 13) {
         let p = document.createElement('p');
-        p.textContent = `${teamGlobal2.Nome} - GOLAÇOOOOOOOOOOOO`;
+        p.textContent = `${teamGlobal2.Nome} - GOOOOOLLLLLLL`;
+    
+        lancesli.appendChild(p);
+        gol2 += 1;
+        resultado.innerHTML = `${gol1} x ${gol2}`;
+    }else if (chance === 14){
+        let p = document.createElement('p');
+        p.textContent = `${teamGlobal2.Nome} - GOLAÇOOOOOOOO`;
+    
+        lancesli.appendChild(p);
+        gol2 += 1;
+        resultado.innerHTML = `${gol1} x ${gol2}`;
+    }else if(chance === 15){
+        let p = document.createElement('p');
+        p.textContent = `${teamGlobal2.Nome} - bateu a falta e... é GOOLLLLL`;
+        lancesli.appendChild(p);
+        gol2 += 1;
+        resultado.innerHTML = `${gol1} x ${gol2}`;
+    }else if(chance >= 16){
+        let p = document.createElement('p');
+        p.textContent = `${teamGlobal2.Nome} - GOOOOLLLLLLLL`;
         lancesli.appendChild(p);
         gol2 += 1;
         resultado.innerHTML = `${gol1} x ${gol2}`;
     }
-}
+    }
 
 function team1chances(){
     if (chance <= 9) {
         let p = document.createElement('p');
-        p.textContent = `E o ${teamGlobal1.Nome} chuta pra foraaa`;
+        p.textContent = `${teamGlobal1.Nome} - chute pra foraaa`;
         lancesli.appendChild(p);
     } else if (chance === 10) {
         let p = document.createElement('p');
@@ -336,15 +357,35 @@ function team1chances(){
         let p = document.createElement('p');
         p.textContent = `${teamGlobal1.Nome} - a bola bateee na traveeee`;
         lancesli.appendChild(p);
-    } else if (chance >= 13) {
+    } else if (chance === 13) {
         let p = document.createElement('p');
-        p.textContent = `${teamGlobal1.Nome} - GOLAÇOOOOOOOOOOOO`;
+        p.textContent = `${teamGlobal1.Nome} - GOOOOOLLLLLLL`;
     
         lancesli.appendChild(p);
         gol1 += 1;
         resultado.innerHTML = `${gol1} x ${gol2}`;
+    }else if (chance === 14){
+        let p = document.createElement('p');
+        p.textContent = `${teamGlobal1.Nome} - GOLAÇOOOOOOOO`;
+    
+        lancesli.appendChild(p);
+        gol1 += 1;
+        resultado.innerHTML = `${gol1} x ${gol2}`;
+    }else if(chance === 15){
+        let p = document.createElement('p');
+        p.textContent = `${teamGlobal1.Nome} - bateu a falta e... é GOOLLLLL`;
+        lancesli.appendChild(p);
+        gol1 += 1;
+        resultado.innerHTML = `${gol1} x ${gol2}`;
+    }else if(chance >= 16){
+        let p = document.createElement('p');
+        p.textContent = `${teamGlobal1.Nome} - GOOOOLLLLLLLL`;
+        lancesli.appendChild(p);
+        gol1 += 1;
+        resultado.innerHTML = `${gol1} x ${gol2}`;
     }
-}    
+    }
+ 
 //função do temporizador
 function temp(){
         let segundos = 0;
@@ -371,12 +412,13 @@ function temp(){
             }
 
         iniciapartida.addEventListener('click', e =>{
-            if(createTeam1 && createTeam2)  {
+            if(terminado)  {
             if (clicado === false){
             terminaartidaexecute = false;
             clearInterval(temporiza)
             temporiza = setInterval(temporizador, 1);
             clicado = true;
+            terminado = false;
             }
         }
         terminar.addEventListener('click', e=>{
@@ -443,8 +485,6 @@ temp()
 //função que reseta tudo
 
 function reset(){
-    createTeam1 = false;
-    createTeam2 = false;
     gol1 = 0;
     gol2 = 0;
     clicado = false;
@@ -455,6 +495,7 @@ function reset(){
     resultado.innerHTML = `${gol1} x ${gol2}`
     lancesli.innerHTML = ''
     final.innerHTML = ''
+    terminado = true;
 }
 function terminapartida(){
     if (terminaartidaexecute === false){
