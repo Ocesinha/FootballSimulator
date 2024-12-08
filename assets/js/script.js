@@ -360,14 +360,12 @@ function team1chances(){
     } else if (chance === 13) {
         let p = document.createElement('p');
         p.textContent = `${teamGlobal1.Nome} - GOOOOOLLLLLLL`;
-    
         lancesli.appendChild(p);
         gol1 += 1;
         resultado.innerHTML = `${gol1} x ${gol2}`;
     }else if (chance === 14){
         let p = document.createElement('p');
         p.textContent = `${teamGlobal1.Nome} - GOLAÇOOOOOOOO`;
-    
         lancesli.appendChild(p);
         gol1 += 1;
         resultado.innerHTML = `${gol1} x ${gol2}`;
@@ -399,12 +397,12 @@ function temp(){
                 minutos += 1;
                 segundos = 0;
                 if(minutos % 5 === 0){
-                    partida()
+                    lance()
                 }
 
             }
         } 
-            if(minutos === 90){
+            if(minutos > 90){
                 clicado = false;
                 terminapartida()
                 return
@@ -428,14 +426,7 @@ function temp(){
     }
     
 
-//função que inicia a partida
-function partida(){
-
-
-            //função de randomizar
-                randomiza()
-            
-            //função que randomiza os lances
+//função que randomiza os lances
                 function lance(){
                   const time = randomiza(2,1);
                   const dado = randomiza(6,1);
@@ -444,19 +435,19 @@ function partida(){
                   if(time === 1)
                   {
                     if(teamGlobal1){
-                   chance = dado + (teamGlobal1.Overral/10);
+                    chance = Math.round((dado + (teamGlobal1.Overral/10)));
                    team1chances()
                     }
                   }
                   if(time === 2){
                     if(teamGlobal2){
-                    chance = dado + (teamGlobal2.Overral/10);
+                    chance = Math.round((dado + (teamGlobal2.Overral/10)));
                     team2chances()
                     }
                     }
                   }
-                  lance()
-                }
+
+
 
 //função que randomiza os numeros
 function randomiza(max,min){
