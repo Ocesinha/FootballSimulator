@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    font-family: "Cuprum", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.bg{
+    min-height: 100vh;
+    max-height: 100%;
+    width: 100vw;
+    background: linear-gradient(to bottom, #072FF1, #091442);
+}
+.main{
+    display: flex;
+    background: linear-gradient(70deg, #072FF1, #010059);
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: white 1px 1px 1px 1px ;
+}
+.main header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main h1{
+    color: white;
+    margin-inline: 1rem;
+}
+.main img{
+    width: 3rem;
+    height: auto;
+}
+
+.teams{
+    display: flex;
+    justify-content: space-between;
+}
+.teams button{
+    padding: 0.5rem;
+    margin-inline: 1rem;
+    border: none;
+    margin-block: 1rem;
+    font-weight: 700;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 5rem;
+    height: 20%;
+}
+p{
+    font-size: 60%;
+}
+.team1{
+    display: flex;
+    flex-direction: column;
+}
+.team2{
+    display: flex;
+    flex-direction: column;
+}
+.teams ul{
+    text-decoration: none;
+    list-style: none;
+    height: 15rem;
+
+}
+.team1 p{
+    margin-inline: 1rem;
+    color: white;
+}
+.team1 h1{
+    margin-inline: 1rem;
+    color: white;
+}
+.team2 p{
+    margin-inline: 1rem;
+    color: white;
+}
+.team2 h1{
+    margin-inline: 1rem;
+    color: white;
+}
+.separ{
+    width: 100%;
+    padding: 1px;
+    background-color: white;
+    margin-block: 1rem;
+}
+.partida{
+    display: flex;
+    justify-content: center;
+}
+.partida button{
+    padding: 0.5rem;
+    margin-inline: 1rem;
+    border: none;
+    margin-block: 1rem;
+    font-weight: 700;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 5rem;
+}
+.all{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    list-style: none;
+}
+.all h1{
+    color: #072FF1;
+}
+.all h2{
+   color: #072FF1;
+}
+.all p{
+    color: white;
+}
+.result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.result h1{
+    margin-block: 1rem;
+    color: #072FF1 ;
+}
+.result p{
+    color: white;
+}
