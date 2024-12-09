@@ -36,6 +36,7 @@
 
 .teams{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 .teams button{
@@ -48,9 +49,10 @@
     cursor: pointer;
     width: 5rem;
     height: 20%;
+
 }
 p{
-    font-size: 60%;
+    font-size: 80%;
 }
 .team1{
     display: flex;
